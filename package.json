@@ -1,17 +1,45 @@
 {
   "name": "auto-fixer-missing-dep",
   "version": "1.0.0",
-  "private": true,
-  "type": "commonjs",
-  "scripts": {
-    "build": "tsc -p tsconfig.json",
-    "test": "jest --runInBand",
-    "ci": "npm run build && npm test"
+  "description": "Tool for detecting and fixing missing dependencies in your JavaScript/TypeScript project",
+  "main": "src/index.js",
+  "bin": {
+    "fix-missing-dep": "src/index.js"
   },
+  "scripts": {
+    "test": "jest",
+    "dev": "nodemon src/index.js",
+    "lint": "eslint .",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vbozh/auto-fixer-missing-dep.git"
+  },
+  "keywords": [
+    "dependencies",
+    "missing-dependencies",
+    "fix-dependencies",
+    "dependency-checker"
+  ],
+  "author": "vbozh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vbozh/auto-fixer-missing-dep/issues"
+  },
+  "homepage": "https://github.com/vbozh/auto-fixer-missing-dep#readme",
   "devDependencies": {
-    "@types/jest": "^29.5.12",
-    "jest": "^29.7.0",
-    "ts-jest": "^29.2.5",
-    "typescript": "^5.5.4"
+    "@types/jest": "^29.0.3",
+    "@types/node": "^18.11.9",
+    "eslint": "^8.27.0",
+    "jest": "^29.3.1",
+    "nodemon": "^2.0.20",
+    "ts-jest": "^29.1.0",
+    "typescript": "^4.9.3"
+  },
+  "dependencies": {
+    "chalk": "^5.2.0",
+    "commander": "^10.0.0",
+    "fs-extra": "^11.1.0"
   }
 }
